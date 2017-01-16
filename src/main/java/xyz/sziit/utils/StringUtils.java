@@ -38,4 +38,24 @@ public class StringUtils {
 
         return bool ? Integer.parseInt(str) : 0;
     }
+
+    /**
+     * 检测字符是否全是空格
+     *
+     * @param text  检测的字符串
+     * @return text为null或length==0或全是空格时返回true，其他情况返回false
+     */
+    public static boolean isAllSpaces(String text) {
+        if (TextUtils.isEmpty(text)) {
+            return true;
+        }
+
+        for (int i = 0; i < text.length(); i++) {
+            if (text.charAt(i) != ' ') {
+                return false;
+            }
+        }
+
+        return true;
+    }
 }

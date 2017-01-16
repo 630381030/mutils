@@ -3,9 +3,9 @@ package xyz.sziit.utils;
 import android.content.Context;
 import android.util.TypedValue;
 
-public class DensityUtil {
+public class DensityUtils {
 
-    private DensityUtil() {
+    private DensityUtils() {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 
