@@ -51,9 +51,7 @@ public class StringUtils {
         }
 
         for (int i = 0; i < text.length(); i++) {
-            if (text.charAt(i) != ' ') {
-                return false;
-            }
+            if (text.charAt(i) != ' ') return false;
         }
 
         return true;
