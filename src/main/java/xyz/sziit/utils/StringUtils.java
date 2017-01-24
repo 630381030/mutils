@@ -46,9 +46,7 @@ public class StringUtils {
      * @return text为null或length==0或全是空格时返回true，其他情况返回false
      */
     public static boolean isAllSpaces(String text) {
-        if (TextUtils.isEmpty(text)) {
-            return true;
-        }
+        if (TextUtils.isEmpty(text)) return true;
 
         for (int i = 0; i < text.length(); i++) {
             if (text.charAt(i) != ' ') return false;
