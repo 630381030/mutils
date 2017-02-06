@@ -11,7 +11,7 @@ public class ActivityUtils {
     }
 
     public static void startActivity(Activity currentActivity,
-                                     Class<Activity> nextActivity) {
+                                     Class nextActivity) {
 
         if (currentActivity == null || nextActivity == null)
             throw new NullPointerException("参数为空");
@@ -21,7 +21,7 @@ public class ActivityUtils {
     }
 
     public static void startActivityAndFinish(Activity currentActivity,
-                                              Class<Activity> nextActivity) {
+                                              Class nextActivity) {
 
         startActivity(currentActivity, nextActivity);
         currentActivity.finish();
