@@ -11,6 +11,7 @@ import java.io.ByteArrayOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.ByteBuffer;
 
 /**
  * 本工具类参考鲁班压缩
@@ -256,5 +257,17 @@ public class BitmapUtils {
         res[1] = options.outHeight;
 
         return res;
+    }
+
+    /**
+     * Bitmap转byte数组
+     * @param bitmap 待转Bitmap
+     * @return byte数组
+     */
+    public static byte[] bitmap2Byte(@NonNull Bitmap bitmap) {
+        int byteCount = bitmap.getByteCount();
+        ByteBuffer buf = ByteBuffer.allocate(byteCount);
+        bitmap.copyPixelsFromBuffer(buf);
+        return buf.array();
     }
 }

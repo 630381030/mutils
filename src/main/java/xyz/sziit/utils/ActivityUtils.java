@@ -2,6 +2,7 @@ package xyz.sziit.utils;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.support.annotation.NonNull;
 
 
 public class ActivityUtils {
@@ -10,8 +11,13 @@ public class ActivityUtils {
         throw new UnsupportedOperationException("cannot be instantiated");
     }
 
-    public static void startActivity(Activity currentActivity,
-                                     Class nextActivity) {
+    /**
+     * 跳转到指定的Activity
+     * @param currentActivity   当前的Activity
+     * @param nextActivity      跳转的Activity
+     */
+    public static void startActivity(@NonNull Activity currentActivity,
+                                     @NonNull Class nextActivity) {
 
         if (currentActivity == null || nextActivity == null)
             throw new NullPointerException("参数为空");
@@ -20,8 +26,13 @@ public class ActivityUtils {
         currentActivity.startActivity(intent);
     }
 
-    public static void startActivityAndFinish(Activity currentActivity,
-                                              Class nextActivity) {
+    /**
+     * 跳转到指定的Activity并finish掉当前的Activity
+     * @param currentActivity   当前的Activity
+     * @param nextActivity      跳转的Activity
+     */
+    public static void startActivityAndFinish(@NonNull Activity currentActivity,
+                                              @NonNull Class nextActivity) {
 
         startActivity(currentActivity, nextActivity);
         currentActivity.finish();

@@ -4,6 +4,7 @@ import android.Manifest;
 import android.app.Activity;
 import android.content.Context;
 import android.content.pm.PackageManager;
+import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v4.content.ContextCompat;
 import android.text.TextUtils;
@@ -24,8 +25,9 @@ public class PermissionUtils {
      * @param permission        权限
      * @param REQUEST_CODE      请求码
      */
-    public static void requestPermissions(final Activity activity,
-                                          final String permission, final int REQUEST_CODE) {
+    public static void requestPermissions(@NonNull final Activity activity,
+                                          @NonNull final String permission,
+                                          @NonNull final int REQUEST_CODE) {
 
         if (activity == null || TextUtils.isEmpty(permission)) {
             throw new NullPointerException("传入参数不能为空!");
@@ -43,7 +45,7 @@ public class PermissionUtils {
      *
      * @param activity  Activity
      */
-    public static void requestAllPermissions(final Activity activity) {
+    public static void requestAllPermissions(@NonNull final Activity activity) {
         if (activity == null) {
             throw new NullPointerException("传入参数不能为空!");
         }
@@ -82,7 +84,8 @@ public class PermissionUtils {
      * @param permission    权限
      * @return true 有权限；false 没有权限
      */
-    public static boolean checkPermissions(final Context context, final String permission) {
+    public static boolean checkPermissions(@NonNull final Context context,
+                                           @NonNull final String permission) {
         if (context == null || TextUtils.isEmpty(permission)) {
             throw new NullPointerException("传入参数不能为空");
         }
